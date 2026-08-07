@@ -27,8 +27,8 @@ struct ContentView: View {
         ZStack {
             RadialGradient(
                 stops: [
-                    .init(color: Color(red: 0.3, green: 0.5, blue: 0.45), location: 0.3),
-                    .init(color: Color(red: 0.7, green: 0.2, blue: 0.2), location: 0.3)
+                    .init(color: Color(red: 0.15, green: 0.75, blue: 0.55), location: 0.3),
+                    .init(color: Color(red: 0.05, green: 0.45, blue: 0.35), location: 0.7)
                 ],
                 center: .top,
                 startRadius: 200,
