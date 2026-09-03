@@ -51,11 +51,11 @@ struct ContentView: View {
             RadialGradient(
                 stops: [
                     .init(
-                        color: Color(red: 0.15, green: 0.75, blue: 0.55),
+                        color: Color(red: 0.22, green: 0.8, blue: 0.6),
                         location: 0.3
                     ),
                     .init(
-                        color: Color(red: 0.05, green: 0.45, blue: 0.35),
+                        color: Color(red: 0.1, green: 0.52, blue: 0.42),
                         location: 0.7
                     )
                 ],
@@ -93,16 +93,10 @@ struct ContentView: View {
                                     axis: (x: 0, y: 1, z: 0)
                                 )
                                 .scaleEffect(
-                                    selectedFlag == number
-                                    ? 1.05
-                                    : selectedFlag == nil
-                                    ? 1
-                                    : 0.8
+                                    selectedFlag == number ? 1.05 : selectedFlag == nil ? 1 : 0.8
                                 )
                                 .opacity(
-                                    selectedFlag == nil || selectedFlag == number
-                                    ? 1
-                                    : 0.25
+                                    selectedFlag == nil || selectedFlag == number ? 1 : 0.25
                                 )
                         }
                         .disabled(selectedFlag != nil)
@@ -137,10 +131,6 @@ struct ContentView: View {
     }
 
     func flagTapped(_ number: Int) {
-        withAnimation(.easeInOut(duration: 0.8)) {
-            selectedFlag = number
-        }
-
         if number == correctAnswer {
             scoreTitle = "Correct!"
             score += 1
@@ -151,7 +141,9 @@ struct ContentView: View {
 
         questionCount += 1
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+        withAnimation(.easeInOut(duration: 1.1)) {
+            selectedFlag = number
+        } completion: {
             if questionCount == 8 {
                 showingFinalScore = true
             } else {
