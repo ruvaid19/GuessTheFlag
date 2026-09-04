@@ -143,7 +143,9 @@ struct ContentView: View {
 
         withAnimation(.easeInOut(duration: 1.1)) {
             selectedFlag = number
-        } completion: {
+        }
+
+        Timer.scheduledTimer(withTimeInterval: 1.1, repeats: false) { _ in
             if questionCount == 8 {
                 showingFinalScore = true
             } else {
