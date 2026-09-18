@@ -55,7 +55,7 @@ struct ContentView: View {
                         location: 0.3
                     ),
                     .init(
-                        color: Color(red: 0.1, green: 0.52, blue: 0.42),
+                        color: Color(red: 0.1, green: 0.60, blue: 0.42),
                         location: 0.7
                     )
                 ],
