@@ -51,7 +51,7 @@ struct ContentView: View {
             RadialGradient(
                 stops: [
                     .init(
-                        color: Color(red: 0.22, green: 0.8, blue: 0.6),
+                        color: Color(red: 0.22, green: 0.7, blue: 0.6),
                         location: 0.3
                     ),
                     .init(
